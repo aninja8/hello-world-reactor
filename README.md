@@ -8,7 +8,7 @@ Steps to reproduce:
 
 - Start the application
 
-- Hit the url http://localhost:8080/hello multiple times
+- Hit the url http://localhost:8080/hello multiple times (OR) Run FooTest
 
 This is an attempt to simulate the following scenario:
 
