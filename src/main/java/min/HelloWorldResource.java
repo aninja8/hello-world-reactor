@@ -19,7 +19,7 @@ public class HelloWorldResource {
         //just ack and process in the background
 
         Mono.fromRunnable(() -> helper.doSomethingAsync())
-                .subscribeOn(Schedulers.elastic())  // delegate to proper thread to not block main flow
+                .subscribeOn(Schedulers.boundedElastic())  // delegate to proper thread to not block main flow
                 .subscribe();
 
         return Mono.just("Hello World");
