@@ -43,7 +43,7 @@ public class Helper {
                 .publishOn(Schedulers.fromExecutor(serviceOpsExecutor))
                 .flatMap(i->{
                    return callService(); // Mock service call
-                })
+                },5)
                 .subscribe();
 
     }
