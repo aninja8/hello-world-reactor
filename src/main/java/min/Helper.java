@@ -31,7 +31,6 @@ public class Helper {
         this.webClient = makeWebClient();
         nums = IntStream.rangeClosed(1, 1000)
                 .boxed().collect(Collectors.toList());
-
     }
 
     @Inject
@@ -53,14 +52,8 @@ public class Helper {
         return
                 webClient
                         .get()
-                        .exchange()
-                        .flatMap(clientResponse -> {
-                            if (clientResponse.statusCode().is5xxServerError()) {
-                                return Mono.just(new String());
-                            }
-                            else
-                                return clientResponse.bodyToMono(String.class);
-                        })
+                        .retrieve()
+                        .bodyToMono(String.class)
                         .map(str-> {
                             logger.info("Received: "+str);
                             return str;
