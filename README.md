@@ -1,6 +1,6 @@
 # hello-world-reactor
 
-The objective of this repo is to reproduce the following Pool#acquire(Duration) time out error
+The objective of this repo is to reproduce the Pool#acquire(Duration) time out error
 
 
 
